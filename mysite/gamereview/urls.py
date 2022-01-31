@@ -15,10 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.urls import url
-from gamereview import views
+from django.conf.urls import url, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^$', views.TestView.as_view(), name='home')
+    url(r'', include('gamereviews.urls'))
 ]
